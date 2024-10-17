@@ -32,6 +32,8 @@ class HighPerformanceTest {
 
         // Get Collection 'salesmen' (creates one if not available)
         salesmen = supermongo.getCollection("salesmen");
+
+
     }
 
     @Test
