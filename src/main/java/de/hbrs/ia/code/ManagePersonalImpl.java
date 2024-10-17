@@ -20,7 +20,7 @@ public class ManagePersonalImpl implements ManagePersonal {
     private MongoClient client = new MongoClient("localhost", 27017);
 
     // Get database 'highperformance' (creates one if not available)
-    private MongoDatabase supermongo = client.getDatabase("highperformanceNewTest");
+    private MongoDatabase supermongo = client.getDatabase("highPerformance");
 
     // Get Collection 'salesmen' (creates one if not available)
     private MongoCollection<Document> salesmen = supermongo.getCollection("salesmen");
@@ -118,6 +118,7 @@ public class ManagePersonalImpl implements ManagePersonal {
             Document foundRecord = socalPerformanceRecords.find(recordQuery).first();
 
             SocialPerformanceRecord currRecord = new SocialPerformanceRecord("","",0,0,0);
+
             currRecord.setGoalId(foundRecord.getString("goalId"));
             currRecord.setGoalDescr(foundRecord.getString("goalDescr"));
             currRecord.setTargetVal(foundRecord.getInteger("targetValue"));
